@@ -1,0 +1,191 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "LR-.#####",
+ "creation": "2026-02-26 17:39:15.054157",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_vlg1",
+  "posting_date",
+  "employee",
+  "employee_name",
+  "column_break_wtwh",
+  "leave_type",
+  "company",
+  "status",
+  "section_break_mpuw",
+  "leave_based_on",
+  "leave_date",
+  "from_date",
+  "to_date",
+  "requested_hours",
+  "leave_days",
+  "leave_hours",
+  "column_break_eiky",
+  "reason",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_vlg1",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Leave Request VS",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1
+  },
+  {
+   "fieldname": "leave_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Leave Type",
+   "options": "Leave Type",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_wtwh",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "employee.employee_name",
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_mpuw",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.leave_based_on==\"Day\"",
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date",
+   "mandatory_depends_on": "eval:doc.leave_based_on==\"Day\""
+  },
+  {
+   "depends_on": "eval:doc.leave_based_on==\"Day\"",
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date",
+   "mandatory_depends_on": "eval:doc.leave_based_on==\"Day\""
+  },
+  {
+   "fieldname": "column_break_eiky",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "label": "Reason"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Open\nApproved\nRejected\nCancelled",
+   "reqd": 1
+  },
+  {
+   "fieldname": "leave_based_on",
+   "fieldtype": "Select",
+   "label": "Leave Based On",
+   "options": "\nHour\nDay"
+  },
+  {
+   "depends_on": "eval:doc.leave_based_on==\"Hour\"",
+   "fieldname": "leave_date",
+   "fieldtype": "Date",
+   "label": "Leave Date",
+   "mandatory_depends_on": "eval:doc.leave_based_on==\"Hour\""
+  },
+  {
+   "depends_on": "eval:doc.leave_based_on==\"Day\"",
+   "fieldname": "leave_days",
+   "fieldtype": "Int",
+   "label": "Leave Days",
+   "mandatory_depends_on": "eval:doc.leave_based_on==\"Day\"",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "leave_hours",
+   "fieldtype": "Int",
+   "label": "Leave Hours",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.leave_based_on==\"Hour\"",
+   "fieldname": "requested_hours",
+   "fieldtype": "Select",
+   "label": "Requested Hours",
+   "mandatory_depends_on": "eval:doc.leave_based_on==\"Hour\"",
+   "non_negative": 1,
+   "options": "\n0.5\n1\n1.5\n2\n2.5\n3\n3.5\n4\n4.5\n5\n5.5\n6\n6.5\n7\n7.5",
+   "precision": "1"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2026-03-06 16:02:08.435909",
+ "modified_by": "Administrator",
+ "module": "Vs Hrms",
+ "name": "Leave Request VS",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": []
+}

@@ -1,0 +1,41 @@
+{
+ "app": "vs_hrms",
+ "creation": "2026-03-05 14:40:35.388899",
+ "docstatus": 0,
+ "doctype": "Workspace Sidebar",
+ "header_icon": "color-monthly-rank",
+ "idx": 0,
+ "items": [
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "aperture",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Vodafone",
+   "link_to": "Vodafone",
+   "link_type": "Workspace",
+   "show_arrow": 0,
+   "type": "Link"
+  },
+  {
+   "child": 0,
+   "collapsible": 1,
+   "icon": "activity",
+   "indent": 0,
+   "keep_closed": 0,
+   "label": "Vodafone Samoa Settings VS",
+   "link_to": "Vodafone Samoa Settings VS",
+   "link_type": "DocType",
+   "show_arrow": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-03-05 17:31:13.311495",
+ "modified_by": "Administrator",
+ "module": "Vs Hrms",
+ "name": "Vodafone",
+ "owner": "Administrator",
+ "standard": 1,
+ "title": "Vodafone"
+}
