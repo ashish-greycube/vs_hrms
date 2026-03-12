@@ -1,0 +1,130 @@
+{
+ "app": "erpnext",
+ "charts": [],
+ "content": "[{\"id\":\"5rpJmbnxwp\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Vodafone</span>\",\"col\":12}},{\"id\":\"QagJaZkx-_\",\"type\":\"card\",\"data\":{\"card_name\":\"Payroll Section\",\"col\":4}},{\"id\":\"GTk6zDCWG6\",\"type\":\"card\",\"data\":{\"card_name\":\"Leave Section\",\"col\":4}},{\"id\":\"k5RA_G3Bqh\",\"type\":\"card\",\"data\":{\"card_name\":\"Settings\",\"col\":4}}]",
+ "creation": "2026-03-05 15:12:45.042548",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "alarm-clock-check",
+ "idx": 0,
+ "indicator_color": "cyan",
+ "is_hidden": 0,
+ "label": "Vodafone",
+ "link_type": "DocType",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Settings",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Vodafone Samoa Settings VS",
+   "link_count": 0,
+   "link_to": "Vodafone Samoa Settings VS",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Leave Section",
+   "link_count": 1,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Leave Request VS",
+   "link_count": 0,
+   "link_to": "Leave Request VS",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Payroll Section",
+   "link_count": 5,
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Payroll Week VS",
+   "link_count": 0,
+   "link_to": "Payroll Week VS",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Previous Payroll End VS",
+   "link_count": 0,
+   "link_to": "Previous Payroll End VS",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Meal Allowance VS",
+   "link_count": 0,
+   "link_to": "Meal Allowance VS",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Commission Request VS",
+   "link_count": 0,
+   "link_to": "Commission Request VS",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Overtime Request VS",
+   "link_count": 0,
+   "link_to": "Overtime Request VS",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2026-03-12 11:27:20.799977",
+ "modified_by": "Administrator",
+ "module": "Vs Hrms",
+ "name": "Vodafone",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 23.0,
+ "shortcuts": [],
+ "title": "Vodafone",
+ "type": "Workspace"
+}
