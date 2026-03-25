@@ -1,24 +1,24 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "PE-.#####",
- "creation": "2026-02-27 15:37:07.151487",
+ "autoname": "PD-.#####",
+ "creation": "2026-03-19 13:13:53.344703",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_0lv3",
-  "posting_date",
+  "section_break_bzow",
+  "amended_from",
+  "section_break_fcio",
+  "creation_date",
   "employee",
   "employee_name",
-  "column_break_fsje",
-  "payroll_week",
-  "missed_hours",
-  "total_amount",
-  "amended_from"
+  "employee_phone_no",
+  "section_break_posn",
+  "deduction_details"
  ],
  "fields": [
   {
-   "fieldname": "section_break_0lv3",
+   "fieldname": "section_break_bzow",
    "fieldtype": "Section Break"
   },
   {
@@ -26,69 +26,61 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Previous Payroll End VS",
+   "options": "Phone Deduction VS",
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
   },
   {
+   "fieldname": "section_break_fcio",
+   "fieldtype": "Section Break"
+  },
+  {
    "default": "Today",
-   "fieldname": "posting_date",
+   "fieldname": "creation_date",
    "fieldtype": "Date",
    "in_list_view": 1,
-   "label": "Posting Date",
+   "label": "Creation Date",
    "reqd": 1
   },
   {
    "fieldname": "employee",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "label": "Employee",
-   "options": "Employee",
-   "reqd": 1
+   "options": "Employee"
   },
   {
    "fetch_from": "employee.employee_name",
    "fieldname": "employee_name",
    "fieldtype": "Data",
-   "label": "Employee Name",
-   "read_only": 1
+   "label": "Employee Name"
   },
   {
-   "fieldname": "column_break_fsje",
-   "fieldtype": "Column Break"
+   "fetch_from": "employee.cell_number",
+   "fieldname": "employee_phone_no",
+   "fieldtype": "Data",
+   "label": "Employee Phone No",
+   "options": "Phone"
   },
   {
-   "fieldname": "payroll_week",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Payroll Week",
-   "options": "Payroll Week VS",
-   "reqd": 1
+   "fieldname": "section_break_posn",
+   "fieldtype": "Section Break"
   },
   {
-   "fieldname": "missed_hours",
-   "fieldtype": "Float",
-   "in_list_view": 1,
-   "label": "Missed Hours",
-   "non_negative": 1,
-   "reqd": 1
-  },
-  {
-   "fieldname": "total_amount",
-   "fieldtype": "Currency",
-   "label": "Total Amount",
-   "read_only": 1
+   "fieldname": "deduction_details",
+   "fieldtype": "Table",
+   "label": "Deduction Details",
+   "options": "Phone Deduction Details VS"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-03-12 12:38:28.888904",
+ "modified": "2026-03-19 14:29:25.438625",
  "modified_by": "Administrator",
  "module": "Vs Hrms",
- "name": "Previous Payroll End VS",
+ "name": "Phone Deduction VS",
  "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [

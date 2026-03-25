@@ -1,24 +1,17 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": ".{fiscal_year}.-Week-.##",
+ "autoname": "naming_series:naming_series",
  "creation": "2026-02-27 11:09:44.445116",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "fiscal_year",
+  "payroll_period",
   "week_start_date",
-  "week_end_date"
+  "week_end_date",
+  "naming_series"
  ],
  "fields": [
-  {
-   "fieldname": "fiscal_year",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Fiscal Year",
-   "options": "Fiscal Year",
-   "reqd": 1
-  },
   {
    "fieldname": "week_start_date",
    "fieldtype": "Date",
@@ -30,16 +23,29 @@
    "fieldtype": "Date",
    "label": "Week End Date",
    "reqd": 1
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series"
+  },
+  {
+   "fieldname": "payroll_period",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Payroll Period",
+   "options": "Payroll Period",
+   "reqd": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-02-27 11:47:51.045098",
+ "modified": "2026-03-12 15:00:35.004538",
  "modified_by": "Administrator",
  "module": "Vs Hrms",
  "name": "Payroll Week VS",
- "naming_rule": "Expression",
+ "naming_rule": "By \"Naming Series\" field",
  "owner": "Administrator",
  "permissions": [
   {

@@ -37,7 +37,7 @@
  "modified": "2026-02-27 15:52:07.565295",
  "modified_by": "Administrator",
  "module": "Vs Hrms",
- "name": "Fiscal Year Payroll Week VS",
+ "name": "Payroll Period Weeks Details VS",
  "owner": "Administrator",
  "permissions": [],
  "row_format": "Dynamic",

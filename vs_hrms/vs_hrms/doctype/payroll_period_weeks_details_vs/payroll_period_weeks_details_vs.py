@@ -5,5 +5,5 @@
 from frappe.model.document import Document
 
 
-class FiscalYearPayrollWeekVS(Document):
+class PayrollPeriodWeeksDetailsVS(Document):
 	pass

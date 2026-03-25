@@ -133,8 +133,13 @@ doctype_js = {"Leave Allocation" : "public/js/leave_allocation.js"}
 # Hook on document methods and events
 
 doc_events = {
-	"Leave Allocation": {
-		"validate": "vs_hrms.api.calculate_allocated_hours"
+	# "Leave Allocation": {
+	# 	"validate": "vs_hrms.api.calculate_allocated_hours"
+	# },
+    "Payroll Period":{
+        # "after_insert": "vs_hrms.salary.set_payroll_period_weeks",
+        "validate": ["vs_hrms.salary.validate_first_payroll_start_date",
+                     "vs_hrms.salary.set_payroll_period_weeks"]
 	}
 }
 
