@@ -7,19 +7,19 @@ from frappe.model.document import Document
 from vs_hrms.salary import create_additional_salary
 from frappe.utils import get_link_to_form
 
-class CommissionRequestVS(Document):
+
+class NightAllowanceVS(Document):
 	def before_submit(self):
 		if self.status not in ["Approved", "Rejected"]:
 			frappe.throw(_("Please Approve or Reject the Request Before Submitting."))
 
 	def on_submit(self):
-		self.create_commision_additional_salary()
+		self.create_night_additional_salary()
 
-	def create_commision_additional_salary(self):
-		commission_com = frappe.db.get_single_value("Vodafone Samoa Settings VS", "commission_earning")
-		if not commission_com:
-			frappe.throw(_("Please Set Commission Salary Earning Component In Vodafone Samoa Settings VS"))
-
-		add_sal = create_additional_salary(self.employee, self.commission_date, commission_com, self.commission_amount, self.name, self.doctype)
+	def create_night_additional_salary(self):
+		night_compo = frappe.db.get_single_value("Vodafone Samoa Settings VS", "night_allowance_earning")
+		if not night_compo:
+			frappe.throw(_("Please Set Night Allowance Salary Earning Component In Vodafone Samoa Settings VS"))
+		add_sal = create_additional_salary(self.employee, self.allowance_date, night_compo, self.amount, self.name, self.doctype)
 		self.additional_salary_ref = add_sal
 		frappe.msgprint(_("Additional Salary {0} Created.").format(get_link_to_form("Additional Salary", add_sal)))

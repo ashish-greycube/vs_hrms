@@ -1,28 +1,24 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "PE-.#####",
- "creation": "2026-02-27 15:37:07.151487",
+ "creation": "2026-04-13 13:28:19.029818",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "section_break_0lv3",
+  "section_break_arco",
   "posting_date",
   "employee",
   "employee_name",
-  "type",
   "amended_from",
-  "column_break_fsje",
-  "payroll_week",
-  "pay_date",
-  "missed_hours",
-  "total_amount",
+  "column_break_ognx",
+  "allowance_date",
   "status",
+  "amount",
   "additional_salary_ref"
  ],
  "fields": [
   {
-   "fieldname": "section_break_0lv3",
+   "fieldname": "section_break_arco",
    "fieldtype": "Section Break"
   },
   {
@@ -30,7 +26,7 @@
    "fieldtype": "Link",
    "label": "Amended From",
    "no_copy": 1,
-   "options": "Previous Payroll End VS",
+   "options": "Night Allowance VS",
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
@@ -55,46 +51,16 @@
    "fetch_from": "employee.employee_name",
    "fieldname": "employee_name",
    "fieldtype": "Data",
-   "label": "Employee Name",
-   "read_only": 1
+   "label": "Employee Name"
   },
   {
-   "fieldname": "column_break_fsje",
+   "fieldname": "column_break_ognx",
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "payroll_week",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "label": "Payroll Week",
-   "options": "Payroll Week VS",
-   "reqd": 1
-  },
-  {
-   "fieldname": "missed_hours",
-   "fieldtype": "Float",
-   "in_list_view": 1,
-   "label": "Missed Hours",
-   "non_negative": 1,
-   "reqd": 1
-  },
-  {
-   "fieldname": "total_amount",
-   "fieldtype": "Currency",
-   "label": "Total Amount",
-   "read_only": 1
-  },
-  {
-   "default": "Earn",
-   "fieldname": "type",
-   "fieldtype": "Select",
-   "label": "Type",
-   "options": "Earn\nDeduct"
-  },
-  {
-   "fieldname": "pay_date",
+   "fieldname": "allowance_date",
    "fieldtype": "Date",
-   "label": "Pay Date",
+   "label": "Allowance Date",
    "reqd": 1
   },
   {
@@ -105,21 +71,24 @@
    "options": "Pending\nApproved\nRejected"
   },
   {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount"
+  },
+  {
    "fieldname": "additional_salary_ref",
    "fieldtype": "Data",
-   "label": "Additional Salary Reference",
-   "read_only": 1
+   "label": "Additional Salary Reference"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-04-13 12:28:36.101136",
+ "modified": "2026-04-13 13:44:37.828203",
  "modified_by": "Administrator",
  "module": "Vs Hrms",
- "name": "Previous Payroll End VS",
- "naming_rule": "Expression",
+ "name": "Night Allowance VS",
  "owner": "Administrator",
  "permissions": [
   {

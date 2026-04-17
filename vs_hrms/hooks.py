@@ -136,11 +136,10 @@ doc_events = {
 	# "Leave Allocation": {
 	# 	"validate": "vs_hrms.api.calculate_allocated_hours"
 	# },
-    "Payroll Period":{
-        # "after_insert": "vs_hrms.salary.set_payroll_period_weeks",
-        "validate": ["vs_hrms.salary.validate_first_payroll_start_date",
-                     "vs_hrms.salary.set_payroll_period_weeks"]
-	}
+    "Salary Structure Assignment":{
+        "validate": "vs_hrms.salary.validate_per_hour_rate_in_salary_assignment",
+        "on_update_after_submit" : "vs_hrms.salary.validate_per_hour_rate_in_salary_assignment"
+    }
 }
 
 # Scheduled Tasks

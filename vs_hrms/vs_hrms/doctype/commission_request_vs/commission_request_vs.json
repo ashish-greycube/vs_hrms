@@ -10,9 +10,13 @@
   "posting_date",
   "employee",
   "employee_name",
+  "designation",
   "column_break_kkge",
+  "commission_date",
+  "status",
   "commission_amount",
-  "amended_from"
+  "amended_from",
+  "additional_salary_ref"
  ],
  "fields": [
   {
@@ -64,13 +68,39 @@
   {
    "fieldname": "column_break_kkge",
    "fieldtype": "Column Break"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Pending\nApproved\nRejected"
+  },
+  {
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation"
+  },
+  {
+   "fieldname": "commission_date",
+   "fieldtype": "Date",
+   "label": "Commission Date ",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "additional_salary_ref",
+   "fieldtype": "Data",
+   "label": "Additional Salary Ref",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-02-27 15:16:46.204628",
+ "modified": "2026-04-10 17:51:39.070641",
  "modified_by": "Administrator",
  "module": "Vs Hrms",
  "name": "Commission Request VS",

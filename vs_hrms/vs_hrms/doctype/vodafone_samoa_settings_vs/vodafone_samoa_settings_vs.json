@@ -9,7 +9,18 @@
   "per_hour_rate_usd",
   "column_break_lfpk",
   "per_hour_rate_fiji",
-  "per_day_meal_allowance"
+  "per_day_meal_allowance",
+  "section_break_eyfi",
+  "accident_compensation",
+  "tab_2_tab",
+  "earning_components_section",
+  "previous_payroll_earning",
+  "commission_earning",
+  "column_break_fnuz",
+  "meal_allowance_earning",
+  "night_allowance_earning",
+  "section_break_xvdn",
+  "previous_payroll_deduction"
  ],
  "fields": [
   {
@@ -35,13 +46,77 @@
   {
    "fieldname": "column_break_lfpk",
    "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_eyfi",
+   "fieldtype": "Section Break",
+   "label": "Tax Dedeuction"
+  },
+  {
+   "fieldname": "accident_compensation",
+   "fieldtype": "Percent",
+   "label": "ACC (Accident Compensation)"
+  },
+  {
+   "fieldname": "tab_2_tab",
+   "fieldtype": "Tab Break",
+   "label": "Salary"
+  },
+  {
+   "fieldname": "previous_payroll_earning",
+   "fieldtype": "Link",
+   "label": "Previous Payroll Earning Component",
+   "link_filters": "[[\"Salary Component\",\"type\",\"=\",\"Earning\"]]",
+   "options": "Salary Component"
+  },
+  {
+   "fieldname": "commission_earning",
+   "fieldtype": "Link",
+   "label": "Commission Earning Component",
+   "link_filters": "[[\"Salary Component\",\"type\",\"=\",\"Earning\"]]",
+   "options": "Salary Component"
+  },
+  {
+   "fieldname": "column_break_fnuz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "meal_allowance_earning",
+   "fieldtype": "Link",
+   "label": "Meal Allowance Earning Component",
+   "link_filters": "[[\"Salary Component\",\"type\",\"=\",\"Earning\"]]",
+   "options": "Salary Component"
+  },
+  {
+   "fieldname": "night_allowance_earning",
+   "fieldtype": "Link",
+   "label": "Night Allowance Earning Component",
+   "link_filters": "[[\"Salary Component\",\"type\",\"=\",\"Earning\"]]",
+   "options": "Salary Component"
+  },
+  {
+   "fieldname": "earning_components_section",
+   "fieldtype": "Section Break",
+   "label": "Earning Components"
+  },
+  {
+   "fieldname": "section_break_xvdn",
+   "fieldtype": "Section Break",
+   "label": "Deduction Components"
+  },
+  {
+   "fieldname": "previous_payroll_deduction",
+   "fieldtype": "Link",
+   "label": "Previous Payroll Deduction",
+   "link_filters": "[[\"Salary Component\",\"type\",\"=\",\"Deduction\"]]",
+   "options": "Salary Component"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2026-02-27 16:42:04.417940",
+ "modified": "2026-04-13 12:14:12.332217",
  "modified_by": "Administrator",
  "module": "Vs Hrms",
  "name": "Vodafone Samoa Settings VS",
