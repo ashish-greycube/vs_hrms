@@ -2,40 +2,42 @@
  "actions": [],
  "allow_rename": 1,
  "autoname": "OT-.#####",
- "creation": "2026-02-27 14:48:36.421477",
+ "creation": "2026-04-15 15:08:11.298640",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_break_brlf",
-  "posting_date",
   "employee",
   "employee_name",
+  "designation",
+  "department",
   "column_break_avfs",
+  "posting_date",
+  "amended_from",
+  "status",
+  "approval_date",
+  "section_break_mytm",
+  "overtime_date",
+  "from_time",
+  "to_time",
+  "column_break_sozq",
+  "total_hours",
   "overtime_type",
-  "amended_from"
+  "calculated_overtime_amount",
+  "approved_amount",
+  "section_break_vdjv",
+  "attendance_reference",
+  "column_break_rrdp",
+  "working_hours",
+  "column_break_euqa",
+  "overtime_hours",
+  "section_break_xgmx",
+  "reason_for_overtime"
  ],
  "fields": [
   {
    "fieldname": "section_break_brlf",
    "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Overtime Request VS",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
-  },
-  {
-   "default": "Today",
-   "fieldname": "posting_date",
-   "fieldtype": "Date",
-   "in_list_view": 1,
-   "label": "Posting Date",
-   "reqd": 1
   },
   {
    "fieldname": "employee",
@@ -53,14 +55,142 @@
    "read_only": 1
   },
   {
+   "fetch_from": "employee.designation",
+   "fieldname": "designation",
+   "fieldtype": "Link",
+   "label": "Designation",
+   "options": "Designation"
+  },
+  {
+   "fetch_from": "employee.department",
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
    "fieldname": "column_break_avfs",
    "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Overtime Request VS",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Pending\nApproved\nRejected"
+  },
+  {
+   "depends_on": "eval:doc.status==\"Approved\"",
+   "fieldname": "approval_date",
+   "fieldtype": "Date",
+   "label": "Approval Date",
+   "mandatory_depends_on": "eval:doc.status==\"Approved\""
+  },
+  {
+   "fieldname": "section_break_mytm",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "overtime_date",
+   "fieldtype": "Date",
+   "label": "Overtime Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "from_time",
+   "fieldtype": "Time",
+   "label": "From Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_time",
+   "fieldtype": "Time",
+   "label": "To Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_sozq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_hours",
+   "fieldtype": "Float",
+   "label": "Total Hours"
   },
   {
    "fieldname": "overtime_type",
    "fieldtype": "Link",
    "label": "Overtime Type",
-   "options": "Overtime Type",
+   "options": "Overtime Type"
+  },
+  {
+   "fieldname": "section_break_xgmx",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "reason_for_overtime",
+   "fieldtype": "Small Text",
+   "label": "Reason(s) For Overtime"
+  },
+  {
+   "fieldname": "section_break_vdjv",
+   "fieldtype": "Section Break",
+   "read_only": 1
+  },
+  {
+   "fieldname": "attendance_reference",
+   "fieldtype": "Data",
+   "label": "Attendance Reference",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_rrdp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "working_hours",
+   "fieldtype": "Float",
+   "label": "Working Hours",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_euqa",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "overtime_hours",
+   "fieldtype": "Float",
+   "label": "Overtime Hours",
+   "read_only": 1
+  },
+  {
+   "fieldname": "calculated_overtime_amount",
+   "fieldtype": "Currency",
+   "label": "Calculated Overtime Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "approved_amount",
+   "fieldtype": "Currency",
+   "label": "Approved Amount",
    "reqd": 1
   }
  ],
@@ -68,7 +198,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2026-02-27 14:52:43.986201",
+ "modified": "2026-04-17 11:34:41.847352",
  "modified_by": "Administrator",
  "module": "Vs Hrms",
  "name": "Overtime Request VS",

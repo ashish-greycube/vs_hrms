@@ -21,7 +21,7 @@ frappe.ui.form.on("Leave Request VS", {
 		if (frm.doc.employee) {
             console.log(frm.doc.employee,'========')
 			frappe.call({
-				method: "vs_hrms.vs_hrms.doctype.leave_request_vs.leave_request_vs.get_leave_details",
+				method: "hrms.hr.doctype.leave_application.leave_application.get_leave_details",
 				async: false,
 				args: {
 					employee: frm.doc.employee,

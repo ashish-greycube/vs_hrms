@@ -43,7 +43,9 @@ app_license = "mit"
 # page_js = {"page" : "public/js/file.js"}
 
 # include js in doctype views
-doctype_js = {"Leave Allocation" : "public/js/leave_allocation.js"}
+doctype_js = {"Leave Allocation" : "public/js/leave_allocation.js",
+              "Leave Application" : "public/js/leave_application.js",
+              "Leave Control Panel" : "public/js/leave_control_panel.js",}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -133,9 +135,21 @@ doctype_js = {"Leave Allocation" : "public/js/leave_allocation.js"}
 # Hook on document methods and events
 
 doc_events = {
-	# "Leave Allocation": {
-	# 	"validate": "vs_hrms.api.calculate_allocated_hours"
-	# },
+    "Leave Allocation": {
+		"validate": ["vs_hrms.api.calculate_allocated_hours",
+                     "vs_hrms.api.check_doj_and_allocate_annual_leave_based_on_experince"],
+	},
+    "Leave Application": {
+        "before_validate": "vs_hrms.api.set_leave_dates_for_hourly_leave_application",
+		"validate": ["vs_hrms.api.validate_applicable_after_probation_period",
+                     "vs_hrms.api.validate_once_in_a_year_leave_application",
+                     "vs_hrms.api.validate_leave_application_for_casual_employees"],
+	},
+    "Attendance": {
+        "before_validate" : ["vs_hrms.api.set_leave_hours_and_regular_hours_for_attendance"],
+        "validate": ["vs_hrms.api.calculate_overtime_hours_and_set_if_attendance_on_holiday"]
+
+    },
     "Salary Structure Assignment":{
         "validate": "vs_hrms.salary.validate_per_hour_rate_in_salary_assignment",
         "on_update_after_submit" : "vs_hrms.salary.validate_per_hour_rate_in_salary_assignment"
@@ -252,3 +266,7 @@ doc_events = {
 # List of apps whose translatable strings should be excluded from this app's translations.
 # ignore_translatable_strings_from = []
 
+extend_doctype_class = {
+    "Leave Application": ["vs_hrms.leave_application.VodafoneLeaveApplicationMixin"],
+    "Leave Policy Assignment": "vs_hrms.leave_policy_assignment.VodafoneLeavePolicyAssignment"
+}
